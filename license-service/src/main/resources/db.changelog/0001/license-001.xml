@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="202010211812" author="Victor Glyzin">
+        <createTable tableName="license">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="license_pk" />
+            </column>
+            <column name="license_id" type="bigint">
+            </column>
+            <column name="description" type="varchar(250)">
+            </column>
+            <column name="license_type" type="varchar(250)">
+            </column>
+            <column name="organization_id" type="bigint">
+            </column>
+            <column name="product_name" type="varchar">
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  db:
+    container_name: db_license
+    image: postgres
+    networks:
+      - conteiner-network
+    ports:
+      - 54321:5432
+    environment:
+     - POSTGRES_DB=db_license
+     - POSTGRES_USER=user
+     - POSTGRES_PASSWORD=1234
+  license-service:
+    build:
+      context: .
+    image: license-service
+    container_name: license-app
+    networks:
+      - conteiner-network
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+     - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/db_license
+     - SPRING_DATASOURCE_USER=user
+     - SPRING_DATASOURCE_PASSWORD=1234
+networks:
+  conteiner-network:
+    driver: bridge

@@ -1,0 +1,7 @@
+
+server:
+  port: 8086
+
+feign:
+  name: license-server
+  url: http://localhost:8082//api/license/

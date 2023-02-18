@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:54321/db_license
+    username: user
+    password: 1234
+    driverClassName: org.postgresql.Driver
+
+  liquibase:
+    default-schema: public
+    change-log: db.changelog/0001/license-001.xml
+server:
+  port: 8082
