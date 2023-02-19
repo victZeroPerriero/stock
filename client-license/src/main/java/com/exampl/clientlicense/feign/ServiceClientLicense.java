@@ -14,6 +14,7 @@ public interface ServiceClientLicense {
     List<LicenseDto> getAllLicense();
     @PostMapping("add")
     LicenseDto addLicense(LicenseDto dto);
+
 //    @GetMapping("/posts/{postId}")
 //    LicenseDto getPostById(@PathVariable Long postId);
 //
