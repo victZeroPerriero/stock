@@ -8,7 +8,7 @@ try{
         // Get some code from a GitHub repository
         git url: 'https://gitlab.com/victZeroPerriero/stock-deploy.git',
             credentialsId: 'stock-user',
-            branch: 'main'
+            branch: 'master'
      }
     stage('Build docker') {
          dockerImage = docker.build("license-service-deploy:${env.BUILD_NUMBER}")
